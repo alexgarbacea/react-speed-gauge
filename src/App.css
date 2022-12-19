@@ -1,38 +1,109 @@
 .App {
   text-align: center;
+  margin-bottom: 40vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mid-page, .speed-circle, .main-circle {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.speed-circle {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 10px solid #FF7273;
+  box-shadow: rgba(65, 69, 72, 0.479) 0px 8px 24px;  
+  height: 40%;
+  width: 40%;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  font-size: 60%;
+  color: black;
+  translate: 80% -80%;
+
+  animation-name: speedOverLimit;
+  /* animation-iteration-count: infinite; */
+  animation-duration: 2s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.speed-circle.on {
+  display: flex;
+}
+
+.main-circle {
+  position: relative;
+  flex-direction: column;
+  background: linear-gradient(160deg,#425E68 43%,#25444E 33%);
+  height: 150px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 150px;
+  font-size: 330%;
+  color: white;
+
+  outline: 7px dashed #38424B;
+  outline-offset: -12px;
+}
+
+.measurment {
+  font-size: 40%;
+  font-weight: lighter;
+}
+
+.controls {
+  width: 100vw;
+}
+
+.controls>div {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.controls>div>* {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.controls>div>label {
+  margin-top: 2em;
+}
+
+.warning {
+  color: #FF6365;
+}
+
+@keyframes speedOverLimit {
+  0% {
+    scale: 0;
+    translate: 0 0;
+    box-shadow: rgba(65, 69, 72, 0.479) 0px 8px 24px;
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    box-shadow: rgb(249, 0, 0) 0px 0px 24px; 
+  }
+  50% {
+    scale: 2;
+    translate: 0 0;
+    box-shadow: rgba(249, 0, 0, 0.831) 0px 0px 24px; 
+  }
+  55% {
+    box-shadow: rgb(249, 0, 0) 0px 0px 24px; 
+  }
+  60% {
+    box-shadow: rgba(249, 0, 0, 0.831) 0px 0px 24px; 
+  }
+  70% {
+    box-shadow: rgba(65, 69, 72, 0.479) 0px 0px 24px;
+  }
+  100% {
+    translate: 80% -80%;
+    box-shadow: rgba(65, 69, 72, 0.479) 0px 8px 24px;
   }
 }

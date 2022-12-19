@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-speed-gauge/static/css/main.4e518142.css",
+    "main.js": "/react-speed-gauge/static/js/main.f8cf26a4.js",
+    "index.html": "/react-speed-gauge/index.html",
+    "main.4e518142.css.map": "/react-speed-gauge/static/css/main.4e518142.css.map",
+    "main.f8cf26a4.js.map": "/react-speed-gauge/static/js/main.f8cf26a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e518142.css",
+    "static/js/main.f8cf26a4.js"
+  ]
+}
